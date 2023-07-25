@@ -1,57 +1,130 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.big-container {
+  z-index: 1;
+  position: relative;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
   padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  width: 20vw;
+  max-width: 500px;
+  background-color: #ffffff;
+  z-index: 2;
+  border-radius: 1rem;
+  display: flex;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.11);
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .container {
   border: 1px solid black;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 1rem;
+  z-index: 2;
 }
 
-.container button {
+.card button {
   opacity: 0%;
   transition: 0.3s all ease;
 }
 
-.container:hover button {
+.card:hover button {
   opacity: 100%;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  background-color: #1b1b1b;
+  justify-content: center;
+  z-index: 999;
+}
+
+.entries-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+input[name="category"] {
+  display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 1rem;
+}
+
+.form-container input,
+.form-container textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: 0px;
+  border: 0px;
+}
+
+.form-container {
+  visibility: hidden;
+  position: absolute;
+  z-index: 3;
+  background: #1b1b1bab;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="file"] {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+h1 {
+  margin-top: 1rem;
+}
+
+.addBtn {
+background-color: rgba(0, 128, 0, 0.215);
 }

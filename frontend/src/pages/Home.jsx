@@ -4,24 +4,24 @@ import axios from 'axios'
 
 const Home = () => {
     const [entries, setEntries] = useState([]);
+    const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
       const fetchData = async () => {
         try {
           const { data } = await axios.get("http://localhost:3002/all-entries/");
-          // Check if the fetched data is an array before setting the state
           setEntries(data);
         } catch (error) {
           console.error("Error fetching data:", error);
         }
       };
       fetchData();
-    }, []);
+    }, [refresh]);
   
     console.log(entries.data);
     return (
         <>
-        {entries.map((item) => (
+        {/* {entries.map((item) => (
         <div className="container" key={item._id}>
           <h3>{item.title}</h3>
           <p>{item.room}</p>
@@ -29,7 +29,7 @@ const Home = () => {
           <button>Delete</button>
           <button>Edit</button>
         </div>
-      ))}
+      ))} */}
         </>
     );
 }

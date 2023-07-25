@@ -1,11 +1,14 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
-    //* title, room, image, content (text)
 const entrySchema = new mongoose.Schema({
-
     title: {
         type: String,
         maxlength: 30,
+        required: true
+    },
+    category: {
+        type: String,
+        enum: ['smallStuff', 'mediumStuff', 'bigStuff'],
         required: true
     },
     room: {
@@ -18,13 +21,13 @@ const entrySchema = new mongoose.Schema({
             url: String,
             imageId: String
         },
-        required: false
+        required: true
     },
     content: {
         type: String,
-        required: true
+        required: false
     }
+});
 
-})
 
-export const Entry = mongoose.model("Entry", entrySchema)
+export const Entry = mongoose.model("Entry", entrySchema);

@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
-import AllEntries from './pages/AllEntries'
 import Home from './pages/Home'
+import BigItems from './pages/BigItems'
+import SmallItems from './pages/SmalItems';
+import MediumItems from './pages/MediumItems';
 
 function App() {
  
@@ -10,7 +12,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/allentries" element={<AllEntries />} />
+        <Route path="/small-items" element={<SmallItems />} />
+        <Route path="/medium-items" element={<MediumItems />} />
+        <Route path="/big-items" element={<BigItems />} />
       </Routes>
     </BrowserRouter>
   );
